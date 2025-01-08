@@ -73,7 +73,7 @@ function Projects() {
 
   return (
     <div className="projects-container">
-      <h1 className="projects-title">My Projects</h1>
+      <h1 className="projects-title">MY PROJECTS</h1>
       <div className="carousel-container">
         <button className="carousel-btn prev-btn" onClick={prevSlide}>
           &lt;

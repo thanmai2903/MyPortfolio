@@ -8,7 +8,7 @@ function About() {
       <div
         className="about-title slide-in-left ml-20" // Apply the slide-in-left animation class
       >
-        About Me
+        ABOUT ME
       </div>
       <div className="about-content">
         <ul>

@@ -37,8 +37,8 @@ function ContactMe() {
   return (
     <div style={{ marginTop: 30 }}>
       <button className="last">
-        <h1 className="contact-title slide-in-left underline ml-[-1000px] mb-20">
-          Contact Me
+        <h1 className="contact-title slide-in-left ml-[-1000px] mb-20">
+          CONTACT ME
         </h1>
         <div className="flex" style={{ marginBottom: 20 }}>
           <div className="div1-contact">
@@ -87,6 +87,7 @@ function ContactMe() {
                     border: "gray",
                     borderRadius: 2,
                     paddingRight: 10,
+                    marginLeft: 10,
                   }}
                   type="text"
                   id="name"
@@ -103,6 +104,7 @@ function ContactMe() {
                     border: "gray",
                     borderRadius: 2,
                     paddingRight: 10,
+                    marginLeft: 10,
                   }}
                   type="email"
                   id="email"
@@ -119,6 +121,7 @@ function ContactMe() {
                     border: "gray",
                     borderRadius: 2,
                     paddingRight: 10,
+                    marginLeft: 10,
                   }}
                   id="message"
                   name="message"
@@ -137,6 +140,26 @@ function ContactMe() {
             </form>
           </div>
         </div>
+        <hr />
+        <span className="ml-[900px]">
+          Terms and Privacy{" "}
+          <span className="ml-[20px]"> Policy Follow me on </span>
+        </span>
+        <a
+          style={{ textDecoration: "underline", color: "purple" }}
+          href="https://github.com/thanmai2903"
+        >
+          {" "}
+          github
+        </a>
+        and
+        <a
+          style={{ textDecoration: "underline", color: "purple" }}
+          href="https://www.linkedin.com/in/thanmai-palla-841599320/"
+        >
+          {" "}
+          linkledin
+        </a>
       </button>
     </div>
   );

@@ -55,9 +55,9 @@ function Skills() {
   return (
     <div className="skills-container">
       <h1
-        className="skills-title slide-in-left underline ml-[-1000px]" // Apply the slide-in-left animation class
+        className="skills-title slide-in-left ml-[-1000px]" // Apply the slide-in-left animation class
       >
-        My Skills
+        MY SKILLS
       </h1>
       <div className="skills-grid">
         {skills.map((skill, index) => (

@@ -1,7 +1,6 @@
 .about-section {
-  height: 100vh;
   background: linear-gradient(to right, #8b0ce0c4, #7456a1de, #beb3cfc1);
-  padding: 20px;
+  padding: 40px;
   margin-top: 50px;
 }
 
@@ -23,7 +22,6 @@
 
 .about-title {
   font-size: 30px;
-  text-decoration: underline;
   margin-bottom: 20px;
 }
 
