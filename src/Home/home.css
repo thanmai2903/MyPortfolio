@@ -1,0 +1,55 @@
+.home-page {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+/* Add this CSS to animate text from the left */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.home-text {
+  text-align: center;
+  margin-left: 150px;
+  font-size: 35px;
+  margin-right: 150px;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+.resume-btn,
+.github-btn {
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.resume-btn {
+  background-color: blue;
+}
+
+.github-btn {
+  background-color: pink;
+}
+
+.img1 {
+  margin-top: 20px;
+  max-width: 100%;
+}
