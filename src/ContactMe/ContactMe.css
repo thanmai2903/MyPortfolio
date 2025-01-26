@@ -13,6 +13,7 @@
 .slide-in-left {
   animation: slideInFromLeft 1s ease-out forwards;
 }
+
 .contact-title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -39,7 +40,6 @@
 
 .last {
   border: none;
-
   width: 100%; /* Full width */
   background: linear-gradient(
     to right,
@@ -49,7 +49,9 @@
       /* Light blue on the right */
   );
   padding: 50px;
+  margin-top: 20px; /* Ensure space for the Terms and Privacy */
 }
+
 .hr {
   height: 8px;
   margin-top: 10px;
@@ -79,11 +81,188 @@
 .input {
   border-color: gray;
   border-radius: 10px;
-  padding: 5px 150px 5px 5px;
+  padding: 10px;
   margin-top: 5px;
+  width: 100%;
 }
 
 .img-contact {
   width: 25px;
   margin: 10px 30px;
+}
+
+/* Responsive Styles */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .contact-title {
+    font-size: 2rem; /* Adjust title size */
+  }
+
+  .div1-contact,
+  .div2-contact {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .talk {
+    font-size: 40px; /* Adjust "Let's Talk" font size */
+    margin-left: 0; /* Adjust margin for centering */
+  }
+
+  .button-contact {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .div2-contact {
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 16px;
+  }
+
+  .img-contact {
+    width: 20px; /* Adjust icon size */
+    margin: 10px 20px;
+  }
+
+  /* Terms and Privacy text */
+  .last span {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .last a {
+    text-decoration: underline;
+    color: purple;
+    font-size: 14px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 1.8rem; /* Adjust title size */
+    text-align: center; /* Center title on mobile */
+  }
+
+  .div1-contact,
+  .div2-contact {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .talk {
+    font-size: 35px; /* Adjust "Let's Talk" font size */
+    margin-left: 0;
+    text-align: center; /* Center the "Let's Talk" text */
+  }
+
+  .button-contact {
+    font-size: 16px;
+    padding: 8px 16px;
+    width: 100%; /* Full width for mobile */
+  }
+
+  .img-contact {
+    width: 20px; /* Adjust icon size */
+    margin: 8px 15px;
+  }
+
+  .div2-contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form fields */
+  }
+
+  .div2-contact input,
+  .div2-contact textarea {
+    width: 100%;
+    max-width: 350px; /* Set max-width for form inputs */
+    margin: 10px 0;
+    padding: 12px; /* Larger padding for better touch input */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  /* Terms and Privacy text */
+  .last span {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%; /* Ensure it takes full width */
+    margin-top: 40px; /* Add more space to the bottom */
+  }
+
+  .last a {
+    text-decoration: underline;
+    color: purple;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 5px;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1.6rem; /* Adjust title size */
+  }
+
+  .talk {
+    font-size: 30px; /* Adjust "Let's Talk" font size */
+  }
+
+  .button-contact {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  .div2-contact {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .div1-contact {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .img-contact {
+    width: 18px; /* Adjust icon size */
+    margin: 5px 10px;
+  }
+
+  .div2-contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form fields */
+  }
+
+  .div2-contact input,
+  .div2-contact textarea {
+    width: 100%;
+    max-width: 320px; /* Adjust the max width for small screens */
+    margin: 10px 0;
+    padding: 12px; /* Larger padding for better touch input */
+    font-size: 14px; /* Adjust font size */
+  }
+
+  /* Terms and Privacy text */
+  .last span {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%; /* Ensure it takes full width */
+  }
+
+  .last a {
+    text-decoration: underline;
+    color: purple;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 5px;
+  }
 }

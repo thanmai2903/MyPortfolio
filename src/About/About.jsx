@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function About() {
   return (
-    <div className="about-section">
+    <div className="about-section text-xs sm:text-xm lg:text-xl p-2 sm:p-4 lg:p-6">
       <div
-        className="about-title slide-in-left ml-20" // Apply the slide-in-left animation class
+        className="about-title text-2xl sm:text-3xl lg:text-4xl font-semibold slide-in-left ml-2 sm:ml-5 lg:ml-20 " // Apply the slide-in-left animation class
       >
         ABOUT ME
       </div>

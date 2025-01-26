@@ -15,15 +15,17 @@ function Header() {
         display: "flex",
         cursor: "pointer",
         gap: 40,
-        paddingLeft: 60,
         paddingTop: 30,
         paddingBottom: 30,
         marginBottom: 20,
         fontSize: 18,
       }}
     >
-      <div style={{ marginRight: 450, fontSize: 30 }}>MY PORTFOLIO</div>
+      <div className="lg:ml-22 sm:mr-0 lg:mr-[80px] text-xs sm:text-xl lg:text-4xl sm:ml-10 ml-2  font-bold">
+        MY PORTFOLIO
+      </div>
       <Link
+        className="ml-[-10px] sm:ml-[-10px] lg:ml-8 text-xs sm:text-xl lg:text-2xl "
         to="/"
         style={{ textDecoration: "none", color: "black" }}
         onMouseEnter={(e) => (e.target.style.color = "blue")}
@@ -32,6 +34,7 @@ function Header() {
         Home
       </Link>
       <Link
+        className="ml-[-10px] sm:ml-[-10px] lg:ml-8 text-xs sm:text-xl lg:text-2xl "
         to="/about"
         style={{ textDecoration: "none", color: "black" }}
         onMouseEnter={(e) => (e.target.style.color = "blue")}
@@ -40,6 +43,7 @@ function Header() {
         About Me
       </Link>
       <Link
+        className="ml-[-10px] sm:ml-[-10px] lg:ml-8 text-xs sm:text-xl lg:text-2xl"
         to="/projects"
         style={{ textDecoration: "none", color: "black" }}
         onMouseEnter={(e) => (e.target.style.color = "blue")}
@@ -48,6 +52,7 @@ function Header() {
         Projects
       </Link>
       <Link
+        className="ml-[-10px] sm:ml-[-10px] lg:ml-8 text-xs sm:text-xl lg:text-2xl  "
         to="/skills"
         style={{ textDecoration: "none", color: "black" }}
         onMouseEnter={(e) => (e.target.style.color = "blue")}
@@ -56,6 +61,7 @@ function Header() {
         Skills
       </Link>
       <Link
+        className="text-xs sm:text-xl lg:text-2xl ml-[-10px] sm:ml-[-10px] lg:ml-8 "
         to="/contact"
         style={{ textDecoration: "none", color: "black" }}
         onMouseEnter={(e) => (e.target.style.color = "blue")}

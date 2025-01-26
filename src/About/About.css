@@ -1,6 +1,5 @@
 .about-section {
   background: linear-gradient(to right, #8b0ce0c4, #7456a1de, #beb3cfc1);
-  padding: 40px;
   margin-top: 50px;
 }
 
@@ -21,19 +20,16 @@
 }
 
 .about-title {
-  font-size: 30px;
   margin-bottom: 20px;
 }
 
 .about-content ul {
-  font-size: 20px;
   color: white;
   line-height: 2;
 }
 ul li::before {
   content: ">>"; /* Right check mark */
   color: white; /* Set the color to black */
-  font-size: 18px; /* Adjust the size */
   margin-right: 10px; /* Space between symbol and text */
   margin-left: 10px;
 }

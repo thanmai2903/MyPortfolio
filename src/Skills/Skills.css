@@ -3,25 +3,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full viewport height */
-  width: 100%; /* Full width */
+  min-height: 100vh; /* Full viewport height */
+  width: 100%;
   padding: 0 20px;
-  background-color: #f7fafc; /* Background color (optional) */
+  background-color: #f7fafc;
 }
 
 .skills-title {
-  font-size: 2.5rem;
+  font-size: 3rem; /* Larger size for desktops */
   font-weight: bold;
-  color: #2d3748; /* Text color */
+  color: #2d3748;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items in the first row */
-  gap: 20px; /* Space between the cards */
-  width: 100%; /* Full width */
-  max-width: 1200px; /* Optional max width */
+  grid-template-columns: repeat(3, 1fr); /* Default 3 items per row */
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .skill-card {
@@ -30,40 +31,103 @@
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
-  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
 }
 
 .skill-icon {
-  max-width: 100%;
+  max-width: 80%; /* Default size */
   height: auto;
   margin-bottom: 10px;
 }
 
 .skill-title {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Default font size */
   font-weight: bold;
   color: #2d3748;
 }
 
 .skill-description {
+  font-size: 1rem;
   color: #4a5568;
 }
 
-@media (max-width: 768px) {
+/* Responsive styles for tablets */
+@media (max-width: 1024px) {
+  .skills-title {
+    font-size: 2.5rem; /* Slightly smaller for tablets */
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 2 items per row on small screens */
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
+  }
+
+  .skill-card {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .skill-title {
+    font-size: 1.25rem;
+  }
+
+  .skill-description {
+    font-size: 0.9rem;
+  }
+
+  .skill-icon {
+    max-width: 70%; /* Adjust image size for tablets */
   }
 }
 
-@media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: 1fr; /* 1 item per row on extra small screens */
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+  .skills-title {
+    font-size: 2rem; /* Smaller title for mobile */
   }
+
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
+  }
+
+  .skill-card {
+    padding: 10px;
+  }
+
+  .skill-title {
+    font-size: 1.1rem;
+  }
+
+  .skill-description {
+    font-size: 0.8rem;
+  }
+
+  .skill-icon {
+    max-width: 60%; /* Adjust image size for mobile */
+  }
+}
+
+/* Extra-small mobile screens */
+@media (max-width: 480px) {
+  .skills-title {
+    font-size: 1.8rem;
+  }
+
+  .skill-title {
+    font-size: 1rem;
+  }
+
+  .skill-description {
+    font-size: 0.75rem;
+  }
+
+  .skill-icon {
+    max-width: 50%; /* Smaller images on very small screens */
+  }
+}
+
+.skill-title {
+  margin-bottom: 20px;
 }

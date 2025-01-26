@@ -67,84 +67,70 @@ function Projects() {
     );
   };
 
-  const getPreviousIndex = (index) =>
-    index === 0 ? projects.length - 1 : index - 1;
-  const getNextIndex = (index) => (index + 1) % projects.length;
-
   return (
-    <div className="projects-container">
-      <h1 className="projects-title">MY PROJECTS</h1>
-      <div className="carousel-container">
-        <button className="carousel-btn prev-btn" onClick={prevSlide}>
+    <div className="flex flex-col text-center items-center py-10 px-4 lg:px-20">
+      <h1 className="text-2xl mb-10 sm:text-3xl lg:text-4xl font-bold ml-[-280px] sm:ml-[-500px] lg:ml-[-1000px]">
+        MY PROJECTS
+      </h1>
+      <div className="relative flex items-center">
+        <button
+          className="absolute left-10 text-2xl mb-10 sm:text-3xl bg-gray-300 hover:bg-gray-400 rounded-full p-2"
+          onClick={prevSlide}
+        >
           &lt;
         </button>
-        <div className="project-wrapper">
-          <div className="project-card project-card-blur">
+        <div className="flex gap-4 overflow-hidden">
+          <div className="ml-10 sm:ml-5 lg:ml-32 hidden sm:block w-1/4 opacity-50">
             <img
-              src={projects[getPreviousIndex(currentIndex)].image}
-              alt={projects[getPreviousIndex(currentIndex)].title}
-              className="project-image half-image"
+              src={
+                projects[(currentIndex - 1 + projects.length) % projects.length]
+                  .image
+              }
+              alt="Previous Project"
+              className="w-full rounded-md"
             />
           </div>
-          <div className="project-card project-card-active">
+          <div className="w-full sm:w-1/2 lg:w-1/3">
             <img
               src={projects[currentIndex].image}
               alt={projects[currentIndex].title}
-              className="project-image full-image"
+              className="w-full rounded-md"
             />
-            <h2
-              className="project-title"
-              style={{ fontSize: 24, fontWeight: "bold" }}
-            >
+            <h2 className="text-xl lg:text-2xl font-bold mt-4">
               {projects[currentIndex].title}
             </h2>
-            <p className="project-description" style={{ marginBottom: 16 }}>
+            <p className="text-sm lg:text-base mt-2 mb-4">
               {projects[currentIndex].description}
             </p>
-
-            <div>
+            <div className="flex gap-4 ml-40 sm:ml-28 lg:ml-40">
               <a
-                href={projects[currentIndex].link} // GitHub Link
+                href={projects[currentIndex].link}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  marginRight: 15,
-                  color: "white",
-                  backgroundColor: "purple",
-                  padding: "5px 10px",
-                  marginTop: 10,
-                  borderRadius: 5,
-                  textDecoration: "none",
-                }}
+                className="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600"
               >
                 GitHub
               </a>
               <a
                 href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "white",
-                  backgroundColor: "purple",
-                  padding: "5px 10px",
-                  borderRadius: 5,
-                  marginTop: 10,
-                  textDecoration: "none",
-                }}
+                className="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600"
               >
                 Live
               </a>
             </div>
           </div>
-          <div className="project-card project-card-blur">
+          <div className="hidden sm:block w-1/4 opacity-50">
             <img
-              src={projects[getNextIndex(currentIndex)].image}
-              alt={projects[getNextIndex(currentIndex)].title}
-              className="project-image half-image"
+              src={projects[(currentIndex + 1) % projects.length].image}
+              alt="Next Project"
+              className="w-full rounded-md"
             />
           </div>
         </div>
-        <button className="carousel-btn next-btn" onClick={nextSlide}>
+        <button
+          className="absolute right-[20px] mb-10 text-2xl sm:text-3xl bg-gray-300 hover:bg-gray-400 rounded-full p-2"
+          onClick={nextSlide}
+        >
           &gt;
         </button>
       </div>

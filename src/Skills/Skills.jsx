@@ -3,6 +3,11 @@ import "./Skills.css";
 import { Link } from "react-router-dom";
 
 function Skills() {
+  <div
+    className="skill-title text-2xl sm:text-3xl lg:text-4xl font-semibold slide-in-left ml-2 sm:ml-5 lg:ml-20 " // Apply the slide-in-left animation class
+  >
+    Skills
+  </div>;
   const skills = [
     {
       title: "HTML",
@@ -55,13 +60,13 @@ function Skills() {
   return (
     <div className="skills-container">
       <h1
-        className="skills-title slide-in-left ml-[-1000px]" // Apply the slide-in-left animation class
+        className="skills-title ml-[-280px] text-xl sm:ml-[-500px] lg:ml-[-1020px]  mb-10" // Apply the slide-in-left animation class
       >
         MY SKILLS
       </h1>
-      <div className="skills-grid">
+      <div className="skills-grid ">
         {skills.map((skill, index) => (
-          <div key={index} className="skill-card">
+          <div key={index} className="skill-card mt-10">
             <img
               src={skill.imgSrc}
               alt={skill.title}
