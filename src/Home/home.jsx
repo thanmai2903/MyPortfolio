@@ -49,7 +49,7 @@ function Home() {
           {/* BUTTONS */}
           <div className="buttons">
 
-            <a href="file:///C:/Users/thanm/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/LocalState/sessions/A7757CF8605D9557B476B8ADF418C118E985A558/transfers/2026-13/Thanmai's%20Resume.pdf"
+            <a hhref="/resume.pdf"
  target="_blank" rel="noreferrer" className="resume">
               Resume
             </a>
