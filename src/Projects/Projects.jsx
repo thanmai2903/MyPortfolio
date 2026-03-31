@@ -1,140 +1,192 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import "./Projects.css";
+
+/* IMAGES */
 import AhoImage from "../Images/aho.png";
-import TouchBistroImage from "../Images/touchbistro.png";
+import WeatherAppImage from "../Images/weather.png";
 import WixFresh from "../Images/wixfre.png";
 import pixune from "../Images/pixune.png";
 import hub from "../Images/hubspot.png";
 import weebly from "../Images/weebly.png";
-import "./Projects.css";
+import youtube from "../Images/youtub.png";
 
 function Projects() {
+  const [current, setCurrent] = useState(0);
+
   const projects = [
     {
       title: "Ahobilam",
-      description: "A devotional website built using React.",
       image: AhoImage,
-      technologies: ["React", "Tailwind CSS", "Node.js"],
-      link: "https://github.com/thanmai2903/Ahobilam",
+      tech: "React, Tailwind CSS, Node.js",
+      github: "https://github.com/thanmai2903/Ahobilam",
+      live: "#",
+      points: [
+        "Built devotional website using React",
+        "Responsive UI with Tailwind CSS",
+        "Clean navigation and structured layout"
+      ]
     },
     {
-      title: "TouchBistro",
-      description: "The best restaurant website easy for online visitors.",
-      image: TouchBistroImage,
-      technologies: ["HTML", "CSS", "TypeScript"],
-      link: "https://github.com/thanmai2903/touchbistro",
+      title: "Netflix-GPT",
+      image: WeatherAppImage,
+      tech: "React, Redux, Firebase, OpenAI API",
+      github: "https://github.com/thanmai2903/netflixx-gpt",
+      live: "#",
+      points: [
+        "Netflix clone with authentication",
+        "GPT-based movie recommendation system",
+        "Optimized performance using Redux"
+      ]
+    },
+    {
+      title: "YouTube Clone",
+      image: youtube,
+      tech: "React, Tailwind, YouTube API",
+      github: "https://github.com/thanmai2903/YouTube-Project",
+      live: "#",
+      points: [
+        "Video streaming app with responsive UI",
+        "Integrated YouTube API",
+        "Reusable components and clean state management"
+      ]
+    },
+    {
+      title: "Weather App",
+      image: WeatherAppImage,
+      tech: "React, Tailwind, API",
+      github: "https://github.com/thanmai2903/weather-app",
+      live: "#",
+      points: [
+        "Real-time weather data using API",
+        "Dynamic UI based on conditions",
+        "Fully responsive design"
+      ]
     },
     {
       title: "WixFresh",
-      description: "Best Food websites.",
       image: WixFresh,
-      technologies: ["HTML", "CSS", "TypeScript"],
-      link: "https://github.com/thanmai2903/wixfresh",
+      tech: "HTML, CSS, TypeScript",
+      github: "https://github.com/thanmai2903/wixfresh",
+      live: "#",
+      points: [
+        "Food website UI design",
+        "Responsive layout",
+        "Clean modern styling"
+      ]
     },
     {
       title: "Pixune",
-      description: "Unleash yout imagination.",
       image: pixune,
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://github.com/thanmai2903/pixune",
+      tech: "HTML, CSS, JavaScript",
+      github: "https://github.com/thanmai2903/pixune",
+      live: "#",
+      points: [
+        "Creative UI design project",
+        "Interactive elements",
+        "User-friendly layout"
+      ]
     },
     {
-      title: "HubSpot",
-      description:
-        "A free CMS software to drive traffic, generate leads and grow revenue.",
+      title: "HubSpot Clone",
       image: hub,
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://github.com/thanmai2903/HubSpot",
+      tech: "HTML, CSS, JavaScript",
+      github: "https://github.com/thanmai2903/HubSpot",
+      live: "#",
+      points: [
+        "CMS-style landing page clone",
+        "Responsive design",
+        "Structured layout"
+      ]
     },
     {
-      title: "Weebly",
-      description: "A professional website that grows for your business.",
+      title: "Weebly Clone",
       image: weebly,
-      technologies: ["React", "Tailwind CSS", "Node.js"],
-      link: "https://github.com/thanmai2903/weebly",
-    },
+      tech: "React, Tailwind CSS",
+      github: "https://github.com/thanmai2903/weebly",
+      live: "#",
+      points: [
+        "Website builder UI clone",
+        "Modern UI using Tailwind",
+        "Reusable components"
+      ]
+    }
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  /* AUTO SLIDER */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % projects.length);
+    }, 3000);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    return () => clearInterval(interval);
+  }, [projects.length]);
+
+  const next = () => {
+    setCurrent((prev) => (prev + 1) % projects.length);
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
+  const prev = () => {
+    setCurrent((prev) =>
+      prev === 0 ? projects.length - 1 : prev - 1
     );
   };
 
   return (
-    <div className="flex flex-col text-center items-center py-10 px-4 lg:px-20">
-      <h1 className="text-2xl mb-10 sm:text-3xl lg:text-4xl font-bold ml-[-280px] sm:ml-[-500px] lg:ml-[-1000px]">
-        MY PROJECTS
-      </h1>
-      <div className="relative flex items-center">
-        <button
-          className="absolute left-10 text-2xl mb-10 sm:text-3xl bg-gray-300 hover:bg-gray-400 rounded-full p-2"
-          onClick={prevSlide}
-        >
-          &lt;
-        </button>
-        <div className="flex gap-4 overflow-hidden">
-          <div className="ml-10 sm:ml-5 lg:ml-32 hidden sm:block w-1/4 opacity-50">
-            <img
-              src={
-                projects[(currentIndex - 1 + projects.length) % projects.length]
-                  .image
-              }
-              alt="Previous Project"
-              className="w-full rounded-md"
-            />
+    <section className="projects-section">
+      <div className="projects-container">
+
+        <h2 className="projects-title">Projects</h2>
+
+        <div className="project-display">
+
+          {/* LEFT IMAGE */}
+          <div className="project-image">
+            <img src={projects[current].image} alt="project" />
           </div>
-          <div className="w-full sm:w-1/2 lg:w-1/3">
-            <img
-              src={projects[currentIndex].image}
-              alt={projects[currentIndex].title}
-              className="w-full rounded-md"
-            />
-            <h2 className="text-xl lg:text-2xl font-bold mt-4">
-              {projects[currentIndex].title}
-            </h2>
-            <p className="text-sm lg:text-base mt-2 mb-4">
-              {projects[currentIndex].description}
-            </p>
-            <div className="flex gap-4 ml-40 sm:ml-28 lg:ml-40">
-              <a
-                href={projects[currentIndex].link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600"
-              >
+
+          {/* RIGHT CONTENT */}
+          <div className="project-details">
+
+            <h3>{projects[current].title}</h3>
+
+            <p className="tech">{projects[current].tech}</p>
+
+            <ul>
+              {projects[current].points.map((point, i) => (
+                <li key={i}>• {point}</li>
+              ))}
+            </ul>
+
+            <div className="buttons">
+              <a href={projects[current].github} target="_blank" rel="noreferrer">
                 GitHub
               </a>
-              <a
-                href="#"
-                className="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600"
-              >
+              <a href={projects[current].live} target="_blank" rel="noreferrer">
                 Live
               </a>
             </div>
+
           </div>
-          <div className="hidden sm:block w-1/4 opacity-50">
-            <img
-              src={projects[(currentIndex + 1) % projects.length].image}
-              alt="Next Project"
-              className="w-full rounded-md"
-            />
-          </div>
+
         </div>
-        <button
-          className="absolute right-[20px] mb-10 text-2xl sm:text-3xl bg-gray-300 hover:bg-gray-400 rounded-full p-2"
-          onClick={nextSlide}
-        >
-          &gt;
-        </button>
+
+        {/* ARROWS */}
+        <button className="arrow left" onClick={prev}>❮</button>
+        <button className="arrow right" onClick={next}>❯</button>
+
+        {/* DOTS */}
+        <div className="dots">
+          {projects.map((_, i) => (
+            <span
+              key={i}
+              className={i === current ? "dot active-dot" : "dot"}
+              onClick={() => setCurrent(i)}
+            />
+          ))}
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }
 

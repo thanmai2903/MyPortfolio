@@ -1,45 +1,179 @@
-.home-page {
+/* SECTION */
+.home-section {
+  padding: 100px 20px;
+  background: #ffffff;
+  color: #111827;
+  transition: all 0.4s ease;
+}
+
+/* 🌙 DARK MODE */
+body.dark .home-section {
+  background: #020617;
+  color: white;
+}
+
+/* CONTAINER */
+.home-container {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
-}
-/* Add this CSS to animate text from the left */
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  justify-content: space-between;
+  gap: 50px;
 }
 
-.slide-in-left {
-  animation: slideInFromLeft 1s ease-out forwards;
-}
-
+/* TEXT */
 .home-text {
-  text-align: center;
+  flex: 1;
 }
 
-.button-group {
-  margin-top: 20px;
+/* INTRO */
+.intro {
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+/* NAME */
+.name {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #7c3aed, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* DARK NAME */
+body.dark .name {
+  background: linear-gradient(to right, #a78bfa, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CURSOR */
+.cursor {
+  margin-left: 5px;
+  color: #7c3aed;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ROLE */
+.role {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* DESC */
+.desc {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+body.dark .desc {
+  color: #cbd5f5;
+}
+
+body.dark .role {
+  color: #e2e8f0;
+}
+
+/* BUTTONS */
+.buttons {
   display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.resume-btn,
-.github-btn {
+.buttons a {
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* RESUME */
+.resume {
+  background: linear-gradient(to right, #7c3aed, #a78bfa);
   color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
 }
 
-.resume-btn {
-  background-color: blue;
+.resume:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.3);
 }
 
-.github-btn {
-  background-color: pink;
+/* GITHUB */
+.github {
+  background: #111827;
+  color: white;
+}
+
+.github:hover {
+  background: #374151;
+  transform: translateY(-3px);
+}
+
+/* LINKEDIN */
+.linkedin {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+.linkedin:hover {
+  background: #111827;
+  color: white;
+}
+
+/* DARK MODE BUTTONS */
+body.dark .linkedin {
+  color: white;
+  border: 1px solid #475569;
+}
+
+body.dark .linkedin:hover {
+  background: #1e293b;
+}
+
+/* IMAGE */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  width: 360px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .profile-img {
+    width: 240px;
+  }
 }

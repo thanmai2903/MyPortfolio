@@ -1,35 +1,132 @@
+/* BACKGROUND */
 .about-section {
-  background: linear-gradient(to right, #8b0ce0c4, #7456a1de, #beb3cfc1);
-  margin-top: 50px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7ff, #eef2ff);
 }
 
-/* Add this CSS to animate text from the left */
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* CONTAINER */
+.about-container {
+  max-width: 1200px;
+  margin: auto;
 }
 
-.slide-in-left {
-  animation: slideInFromLeft 1s ease-out forwards;
-}
-
+/* TITLE */
 .about-title {
-  margin-bottom: 20px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 50px;
+  position: relative;
 }
 
-.about-content ul {
-  color: white;
-  line-height: 2;
+.about-title::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(to right, #7c3aed, #6366f1);
+  display: block;
+  margin: 10px auto;
+  border-radius: 2px;
 }
-ul li::before {
-  content: ">>"; /* Right check mark */
-  color: white; /* Set the color to black */
-  margin-right: 10px; /* Space between symbol and text */
-  margin-left: 10px;
+
+/* GRID */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* LEFT SIDE */
+.about-box {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-box p {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.about-box span {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+/* RIGHT SIDE CARDS */
+.about-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(124, 58, 237, 0.2);
+}
+
+/* TEXT */
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.card p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* HIGHLIGHT CARD */
+.card.highlight {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  border: 1px solid #c4b5fd;
+}
+
+.card.highlight h3 {
+  color: #6d28d9;
+}
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-box p {
+    font-size: 14px;
+  }
+
+  .about-right {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,3 +1,80 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* RESET */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  transition: all 0.3s ease;
+}
+
+/* 🌙 DARK MODE */
+body.dark {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* APPLY TO ALL SECTIONS */
+body.dark .home-section,
+body.dark .about-section,
+body.dark .projects-section,
+body.dark .contact-section {
+  background: #0f172a;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+
+/* DARK NAVBAR */
+body.dark .navbar {
+  background: #020617;
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #7c3aed;
+}
+
+/* DARK BUTTON */
+.dark-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #7c3aed, #a78bfa);
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
