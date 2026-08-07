@@ -1,80 +1,278 @@
-/* RESET */
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 body {
+   padding-top: 100px;
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #ffffff;
   color: #111827;
-  transition: all 0.3s ease;
+  transition: background .35s ease, color .35s ease;
 }
 
-/* 🌙 DARK MODE */
-body.dark {
-  background: #0f172a;
-  color: #ffffff;
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark{
+  background:#0f172a;
+  color:#ffffff;
 }
 
-/* APPLY TO ALL SECTIONS */
+/* Apply to sections */
+
 body.dark .home-section,
 body.dark .about-section,
 body.dark .projects-section,
-body.dark .contact-section {
-  background: #0f172a;
-  color: white;
+body.dark .skills-section,
+body.dark .experience-section,
+body.dark .education-section,
+body.dark .certifications-section,
+body.dark .contact-section,
+body.dark .footer{
+  background:#0f172a;
+  color:white;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  position: sticky;
-  top: 0;
-  background: white;
-  z-index: 1000;
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:92%;
+    max-width:1450px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding: 14px 32px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(0,0,0,.06);
+
+    box-shadow:
+0 12px 35px rgba(15,23,42,.08),
+0 2px 8px rgba(124,58,237,.05);
+
+    z-index:1000;
+
+    transition:.35s;
+
+    box-sizing:border-box;
 }
 
-/* DARK NAVBAR */
-body.dark .navbar {
-  background: #020617;
+/* =====================================================
+   DARK NAVBAR
+===================================================== */
+
+body.dark .navbar{
+
+    background:rgba(15,23,42,.88);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.45),
+        0 1px 0 rgba(255,255,255,.05) inset;
+
+}
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo{
+
+  font-size:34px;
+
+  font-weight:800;
+
+  color:#111827;
+
+  letter-spacing:-0.5px;
+
 }
 
-/* LOGO */
-.logo {
-  font-size: 22px;
-  font-weight: 700;
+body.dark .logo{
+
+  color:white;
+
 }
 
-/* NAV LINKS */
-.nav-links {
-  display: flex;
-  gap: 30px;
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:38px;
+
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 16px;
-  transition: 0.3s;
+.nav-links a{
+
+  position:relative;
+
+  text-decoration:none;
+
+  color:#374151;
+
+  font-size:17px;
+
+  font-weight:500;
+
+  transition:.3s;
+
 }
 
-.nav-links a:hover {
-  color: #7c3aed;
+body.dark .nav-links a{
+
+  color:#e5e7eb;
+
 }
 
-/* DARK BUTTON */
-.dark-btn {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(to right, #7c3aed, #a78bfa);
-  color: white;
+.nav-links a.active{
+    color:#7c3aed;
+    font-weight:700;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+.nav-links a:hover{
+    transform:translateY(-2px);
+
+  color:#7c3aed;
+
+}
+
+/* Underline Animation */
+
+.nav-links a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:-8px;
+
+  width:0;
+
+  height:2px;
+
+  background:#7c3aed;
+
+  transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+  width:100%;
+
+}
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.dark-btn{
+
+  width:52px;
+
+  height:52px;
+
+  border:none;
+
+  border-radius:16px;
+
+  cursor:pointer;
+
+  background:linear-gradient(135deg,#7c3aed,#9333ea);
+
+  color:white;
+
+  font-size:20px;
+  font-weight: 800;
+
+  transition:.35s;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+}
+
+.dark-btn:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:0 12px 28px rgba(124,58,237,.30);
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:1024px){
+
+  .navbar{
+
+    padding:16px 5%;
+
   }
+
+  .nav-links{
+
+    gap:24px;
+
+  }
+
+  .nav-links a{
+
+    font-size:15px;
+
+  }
+
+}
+
+@media (max-width:768px){
+
+  .navbar{
+
+    padding:15px 5%;
+
+  }
+
+  .logo{
+
+    font-size:28px;
+
+  }
+
+  .nav-links{
+
+    display:none;
+
+  }
+
 }

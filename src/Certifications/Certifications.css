@@ -1,0 +1,778 @@
+/* =====================================================
+   CERTIFICATIONS SECTION
+===================================================== */
+
+.certifications{
+    padding:100px 20px;
+    background:#f8fafc;
+    transition:.35s;
+}
+
+body.dark .certifications{
+    background:#020617;
+}
+
+.certifications-container{
+    max-width:1250px;
+    margin:auto;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.section-title{
+
+    text-align:center;
+    font-size:42px;
+    font-weight:800;
+    color:#111827;
+    margin-bottom:15px;
+    position:relative;
+
+}
+
+body.dark .section-title{
+    color:white;
+}
+
+.section-title::after{
+
+    content:"";
+    display:block;
+    width:90px;
+    height:4px;
+    background:#7c3aed;
+    margin:14px auto;
+    border-radius:30px;
+
+}
+
+.section-subtitle{
+
+    max-width:760px;
+    margin:0 auto 60px;
+    text-align:center;
+    color:#64748b;
+    line-height:1.8;
+    font-size:17px;
+
+}
+
+body.dark .section-subtitle{
+
+    color:#cbd5e1;
+
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+/* ==========================================
+   CERTIFICATE STATS
+========================================== */
+
+.certificate-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin:70px 0;
+
+}
+
+.certificate-stat-card{
+
+    background:#1f2937;
+
+    border-radius:18px;
+
+    padding:32px 20px;
+
+    text-align:center;
+
+    border:1px solid rgba(124,58,237,.18);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.certificate-stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#7c3aed,#a855f7);
+
+}
+
+.certificate-stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#7c3aed;
+
+    box-shadow:0 18px 35px rgba(124,58,237,.25);
+
+}
+
+.certificate-stat-card h3{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#8b5cf6;
+
+    margin-bottom:10px;
+
+}
+
+.certificate-stat-card p{
+
+    font-size:16px;
+
+    color:#cbd5e1;
+
+    font-weight:600;
+
+}
+body.dark .stat-card p{
+
+    color:#cbd5e1;
+
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.certificate-grid{
+
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.certificate-card{
+
+    display:grid;
+    grid-template-columns:430px 1fr;
+    gap:35px;
+    align-items:center;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+body.dark .certificate-card{
+
+    background:#1e293b;
+
+}
+
+.certificate-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(124,58,237,.18);
+
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.certificate-image-wrapper{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+}
+
+.certificate-image{
+
+    width:100%;
+    height:280px;
+    object-fit:cover;
+
+    border-radius:18px;
+
+    transition:.45s;
+
+}
+
+.certificate-card:hover .certificate-image{
+
+    transform:scale(1.04);
+
+}
+
+/* =====================================================
+   LEVEL BADGE
+===================================================== */
+
+.certificate-level{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+.certificate-level.purple{
+
+    background:#7c3aed;
+
+}
+
+.certificate-level.blue{
+
+    background:#2563eb;
+
+}
+
+.certificate-level.green{
+
+    background:#059669;
+
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.certificate-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.certificate-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+
+    gap:20px;
+
+}
+
+.certificate-top h3{
+
+    font-size:30px;
+
+    color:#111827;
+
+    font-weight:800;
+
+}
+
+body.dark .certificate-top h3{
+
+    color:white;
+
+}
+
+.issued-year{
+
+    background:#ede9fe;
+
+    color:#7c3aed;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+body.dark .issued-year{
+
+    background:#312e81;
+
+    color:white;
+
+}
+
+.certificate-content h4{
+
+    font-size:19px;
+
+    color:#7c3aed;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.certificate-content p{
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+    font-size:16px;
+
+}
+
+body.dark .certificate-content p{
+
+    color:#cbd5e1;
+
+}
+
+/* =====================================================
+   TAGS
+===================================================== */
+
+.certificate-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+}
+
+.certificate-tags span{
+
+    padding:9px 16px;
+
+    border-radius:30px;
+
+    background:#ede9fe;
+
+    color:#7c3aed;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.certificate-tags span:hover{
+
+    background:#7c3aed;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+body.dark .certificate-tags span{
+
+    background:#312e81;
+
+    color:white;
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.certificate-buttons{
+
+    display:flex;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+.certificate-buttons a{
+
+    text-decoration:none;
+
+    padding:14px 24px;
+
+    border-radius:12px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.view-btn{
+
+    background:linear-gradient(135deg,#7c3aed,#9333ea);
+
+    color:white;
+
+}
+
+.view-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 28px rgba(124,58,237,.35);
+
+}
+
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+.certification-cta{
+
+    margin-top:80px;
+
+    padding:60px 40px;
+
+    border-radius:28px;
+
+    background:linear-gradient(135deg,#7c3aed,#5b21b6);
+
+    color:white;
+
+    text-align:center;
+
+    box-shadow:0 25px 50px rgba(124,58,237,.28);
+
+}
+
+.certification-cta h2{
+
+    font-size:36px;
+
+    font-weight:800;
+
+    margin-bottom:18px;
+
+}
+
+.certification-cta p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+    color:rgba(255,255,255,.92);
+
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark .certificate-card{
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+body.dark .certificate-image{
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+.certificate-card,
+.stat-card{
+
+    animation:fadeUp .6s ease both;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+
+.certificate-card{
+
+grid-template-columns:1fr;
+
+}
+
+.certificate-image{
+
+height:320px;
+
+}
+
+.certification-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:992px){
+
+.certificate-stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.certificate-stats{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.certifications{
+
+padding:80px 20px;
+
+}
+
+.section-title{
+
+font-size:34px;
+
+}
+
+.section-subtitle{
+
+font-size:16px;
+
+margin-bottom:45px;
+
+}
+
+.certificate-card{
+
+padding:22px;
+
+gap:25px;
+
+}
+
+.certificate-image{
+
+height:240px;
+
+}
+
+.certificate-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:12px;
+
+}
+
+.certificate-top h3{
+
+font-size:25px;
+
+}
+
+.certificate-content h4{
+
+font-size:18px;
+
+}
+
+.certificate-buttons{
+
+flex-direction:column;
+
+}
+
+.certificate-buttons a{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.certification-stats{
+
+grid-template-columns:1fr;
+
+}
+
+.certification-cta{
+
+padding:45px 25px;
+
+}
+
+.certification-cta h2{
+
+font-size:28px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.certifications{
+
+padding:70px 15px;
+
+}
+
+.section-title{
+
+font-size:30px;
+
+}
+
+.certificate-image{
+
+height:200px;
+
+}
+
+.certificate-top h3{
+
+font-size:22px;
+
+}
+
+.certificate-content p{
+
+font-size:15px;
+
+}
+
+.certificate-tags{
+
+justify-content:center;
+
+}
+
+.certificate-tags span{
+
+font-size:12px;
+
+padding:8px 14px;
+
+}
+
+.certification-cta{
+
+padding:35px 20px;
+
+}
+
+.certification-cta h2{
+
+font-size:24px;
+
+}
+
+.certification-cta p{
+
+font-size:15px;
+
+}
+
+}

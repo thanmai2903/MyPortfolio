@@ -1,193 +1,514 @@
-import React, { useState, useEffect } from "react";
 import "./Projects.css";
 
-/* IMAGES */
-import AhoImage from "../Images/aho.png";
-import WeatherAppImage from "../Images/weather.png";
-import WixFresh from "../Images/wixfre.png";
-import pixune from "../Images/pixune.png";
-import hub from "../Images/hubspot.png";
-import weebly from "../Images/weebly.png";
-import youtube from "../Images/youtub.png";
+import ThanVerseAI from "../Images/thanverse.png";
+import PdfForge from "../Images/pdfforge.png";
+import NavNarasimha from "../Images/navnarasimha.png";
+import BookingApp from "../Images/booking.png";
+
+import YouTubeClone from "../Images/youtubeclone.png";
+import NetflixGPT from "../Images/netflix.png";
+import WeatherApp from "../Images/weather.png";
+import FoodApp from "../Images/foodapp.png";
 
 function Projects() {
-  const [current, setCurrent] = useState(0);
 
-  const projects = [
-    {
-      title: "Ahobilam",
-      image: AhoImage,
-      tech: "React, Tailwind CSS, Node.js",
-      github: "https://github.com/thanmai2903/Ahobilam",
-      live: "#",
-      points: [
-        "Built devotional website using React",
-        "Responsive UI with Tailwind CSS",
-        "Clean navigation and structured layout"
-      ]
-    },
-    {
-      title: "Netflix-GPT",
-      image: WeatherAppImage,
-      tech: "React, Redux, Firebase, OpenAI API",
-      github: "https://github.com/thanmai2903/netflixx-gpt",
-      live: "#",
-      points: [
-        "Netflix clone with authentication",
-        "GPT-based movie recommendation system",
-        "Optimized performance using Redux"
-      ]
-    },
-    {
-      title: "YouTube Clone",
-      image: youtube,
-      tech: "React, Tailwind, YouTube API",
-      github: "https://github.com/thanmai2903/YouTube-Project",
-      live: "#",
-      points: [
-        "Video streaming app with responsive UI",
-        "Integrated YouTube API",
-        "Reusable components and clean state management"
-      ]
-    },
-    {
-      title: "Weather App",
-      image: WeatherAppImage,
-      tech: "React, Tailwind, API",
-      github: "https://github.com/thanmai2903/weather-app",
-      live: "#",
-      points: [
-        "Real-time weather data using API",
-        "Dynamic UI based on conditions",
-        "Fully responsive design"
-      ]
-    },
-    {
-      title: "WixFresh",
-      image: WixFresh,
-      tech: "HTML, CSS, TypeScript",
-      github: "https://github.com/thanmai2903/wixfresh",
-      live: "#",
-      points: [
-        "Food website UI design",
-        "Responsive layout",
-        "Clean modern styling"
-      ]
-    },
-    {
-      title: "Pixune",
-      image: pixune,
-      tech: "HTML, CSS, JavaScript",
-      github: "https://github.com/thanmai2903/pixune",
-      live: "#",
-      points: [
-        "Creative UI design project",
-        "Interactive elements",
-        "User-friendly layout"
-      ]
-    },
-    {
-      title: "HubSpot Clone",
-      image: hub,
-      tech: "HTML, CSS, JavaScript",
-      github: "https://github.com/thanmai2903/HubSpot",
-      live: "#",
-      points: [
-        "CMS-style landing page clone",
-        "Responsive design",
-        "Structured layout"
-      ]
-    },
-    {
-      title: "Weebly Clone",
-      image: weebly,
-      tech: "React, Tailwind CSS",
-      github: "https://github.com/thanmai2903/weebly",
-      live: "#",
-      points: [
-        "Website builder UI clone",
-        "Modern UI using Tailwind",
-        "Reusable components"
-      ]
-    }
-  ];
+const featuredProjects = [
 
-  /* AUTO SLIDER */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % projects.length);
-    }, 3000);
+{
+title:"ThanVerse AI",
+tag:"Featured AI Project",
+image:ThanVerseAI,
 
-    return () => clearInterval(interval);
-  }, [projects.length]);
+description:
+"An AI assistant powered by Groq Llama 3.3 featuring intelligent conversations, voice input, Markdown rendering and persistent chat history.",
 
-  const next = () => {
-    setCurrent((prev) => (prev + 1) % projects.length);
-  };
+tech:[
+"Next.js",
+"TypeScript",
+"Tailwind CSS",
+"Groq API",
+"Markdown"
+],
 
-  const prev = () => {
-    setCurrent((prev) =>
-      prev === 0 ? projects.length - 1 : prev - 1
-    );
-  };
+features:[
+"AI Chatbot",
+"Voice Input",
+"Chat History",
+"Responsive UI"
+],
 
-  return (
-    <section className="projects-section">
-      <div className="projects-container">
+stats:[
+"AI Powered",
+"Modern UI",
+"Production Ready"
+],
 
-        <h2 className="projects-title">Projects</h2>
+github:
+"https://github.com/thanmai2903/chatbot-ThanVerseAI",
 
-        <div className="project-display">
+live:
+"https://chatbot-than-verse-ai.vercel.app/"
+},
 
-          {/* LEFT IMAGE */}
-          <div className="project-image">
-            <img src={projects[current].image} alt="project" />
-          </div>
+{
+title:"PDF Forge",
 
-          {/* RIGHT CONTENT */}
-          <div className="project-details">
+tag:"SaaS Application",
 
-            <h3>{projects[current].title}</h3>
+image:PdfForge,
 
-            <p className="tech">{projects[current].tech}</p>
+description:
+"A modern SaaS platform for merging, splitting and compressing PDF documents with secure cloud storage.",
 
-            <ul>
-              {projects[current].points.map((point, i) => (
-                <li key={i}>• {point}</li>
-              ))}
-            </ul>
+tech:[
+"Next.js",
+"TypeScript",
+"Firebase",
+"Cloudinary",
+"Tailwind CSS"
+],
 
-            <div className="buttons">
-              <a href={projects[current].github} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a href={projects[current].live} target="_blank" rel="noreferrer">
-                Live
-              </a>
-            </div>
+features:[
+"Merge PDFs",
+"Split PDFs",
+"Compress PDFs",
+"Google Login"
+],
 
-          </div>
+stats:[
+"Cloud Storage",
+"Authentication",
+"Responsive"
+],
 
-        </div>
+github:
+"https://github.com/thanmai2903/pdf-forge",
 
-        {/* ARROWS */}
-        <button className="arrow left" onClick={prev}>❮</button>
-        <button className="arrow right" onClick={next}>❯</button>
+live:
+"https://pdf-forge-s8iw.vercel.app/"
+},
 
-        {/* DOTS */}
-        <div className="dots">
-          {projects.map((_, i) => (
-            <span
-              key={i}
-              className={i === current ? "dot active-dot" : "dot"}
-              onClick={() => setCurrent(i)}
-            />
-          ))}
-        </div>
+{
+title:"NavNarasimha",
 
-      </div>
-    </section>
-  );
+tag:"AI Platform",
+
+image:NavNarasimha,
+
+description:
+"AI-powered devotional platform featuring Panchang, temple information, multilingual support and intelligent spiritual guidance.",
+
+tech:[
+"MERN",
+"OpenRouter AI",
+"Tailwind CSS",
+"AI"
+],
+
+features:[
+"AI Assistant",
+"Panchang",
+"Temple Search",
+"Multilingual"
+],
+
+stats:[
+"AI Powered",
+"Modern UI",
+"Responsive"
+],
+
+github:
+"https://github.com/thanmai2903/NavNarasimha",
+
+live:"#"
+},
+
+{
+title:"MERN Booking App",
+
+tag:"Full Stack",
+
+image:BookingApp,
+
+description:
+"Hotel booking application with authentication, booking management and secure REST API integration.",
+
+tech:[
+"MongoDB",
+"Express",
+"React",
+"Node.js",
+"TypeScript"
+],
+
+features:[
+"JWT Authentication",
+"Booking System",
+"REST APIs",
+"Responsive"
+],
+
+stats:[
+"CRUD",
+"Authentication",
+"Full Stack"
+],
+
+github:
+"https://github.com/thanmai2903/mern-booking-app",
+
+live:"#"
+}
+
+];
+
+const otherProjects = [
+
+{
+title:"YouTube Clone",
+
+image:YouTubeClone,
+
+description:
+"A responsive YouTube-inspired streaming platform with search, video playback and Redux state management.",
+
+tech:[
+"React",
+"Redux Toolkit",
+"Tailwind CSS",
+"YouTube API"
+],
+
+github:
+"https://github.com/thanmai2903/YoutubeApp",
+
+live:
+"https://youtube-app-o2c8.vercel.app/"
+},
+
+{
+title:"Netflix GPT",
+
+image:NetflixGPT,
+
+description:
+"Netflix clone featuring Firebase Authentication and AI-powered movie recommendations using GPT.",
+
+tech:[
+"React",
+"Firebase",
+"Redux",
+"OpenAI API"
+],
+
+github:
+"https://github.com/thanmai2903/netflixx-gpt",
+
+live:"#"
+},
+
+{
+title:"Weather Forecast",
+
+image:WeatherApp,
+
+description:
+"Real-time weather application with 5-day forecasting using OpenWeatherMap API.",
+
+tech:[
+"React",
+"Tailwind CSS",
+"OpenWeather API"
+],
+
+github:
+"https://github.com/thanmai2903/weather-app",
+
+live:
+"https://weather-app-hkcb.vercel.app/"
+},
+
+{
+title:"South Indian Flavors",
+
+image:FoodApp,
+
+description:
+"Responsive food ordering platform inspired by Swiggy and Zomato with Firebase Authentication.",
+
+tech:[
+"React",
+"Firebase",
+"Tailwind CSS"
+],
+
+github:
+"https://github.com/thanmai2903/food-app",
+
+live:
+"https://food-app-lrgj.vercel.app/"
+}
+
+];
+
+return (
+
+<section className="projects-section" id="projects">
+
+<div className="projects-container">
+
+<h2 className="projects-title">
+Projects
+</h2>
+
+
+<h3 className="section-heading">
+Featured AI & Full Stack Projects
+</h3>
+
+<div className="featured-projects">
+
+{featuredProjects.map((project,index)=>(
+
+<div className="project-card" key={index}>
+
+<div className="project-image">
+
+<img
+src={project.image}
+alt={project.title}
+/>
+
+</div>
+
+<div className="project-content">
+
+<span className="project-category">
+
+{project.tag}
+
+</span>
+
+<h3>
+
+{project.title}
+
+</h3>
+
+<p className="project-description">
+
+{project.description}
+
+</p>
+
+{/* ================= TECH STACK ================= */}
+
+<div className="tech-stack">
+
+  {project.tech.map((tech, i) => (
+
+    <span key={i}>
+      {tech}
+    </span>
+
+  ))}
+
+</div>
+
+{/* ================= FEATURES ================= */}
+
+<div className="highlight-list">
+
+  {project.features.map((feature, i) => (
+
+    <div
+      className="highlight-item"
+      key={i}
+    >
+
+      ✓ {feature}
+
+    </div>
+
+  ))}
+
+</div>
+
+{/* ================= STATS ================= */}
+
+<div className="project-stats">
+
+  {project.stats.map((stat, i) => (
+
+    <div
+      className="stat-box"
+      key={i}
+    >
+      ⭐ {stat}
+    </div>
+
+  ))}
+
+</div>
+
+{/* ================= BUTTONS ================= */}
+
+<div className="project-buttons">
+
+  <a
+    href={project.live}
+    target="_blank"
+    rel="noreferrer"
+    className="live-btn"
+  >
+
+     Live Demo
+
+  </a>
+
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noreferrer"
+    className="github-btn"
+  >
+
+     GitHub
+
+  </a>
+
+</div>
+
+</div>
+
+</div>
+
+))}
+</div>
+
+<h3 className="section-heading">
+📦 Other Projects
+</h3>
+
+<p className="other-subtitle">
+
+Frontend • API Integration • UI Development • Mini Applications
+
+</p>
+
+<div className="other-projects">
+
+{otherProjects.map((project,index)=>(
+
+<div
+className="small-project-card"
+key={index}
+>
+
+<div className="small-image">
+
+<img
+src={project.image}
+alt={project.title}
+/>
+
+</div>
+
+<div className="small-content">
+
+<h3>
+
+{project.title}
+
+</h3>
+
+<p>
+
+{project.description}
+
+</p>
+
+<div className="small-tech">
+
+{project.tech.map((item,i)=>(
+
+<span key={i}>
+
+{item}
+
+</span>
+
+))}
+
+</div>
+
+<div className="small-buttons">
+
+<a
+href={project.live}
+target="_blank"
+rel="noreferrer"
+className="live-btn"
+>
+
+Live Demo
+
+</a>
+
+<a
+href={project.github}
+target="_blank"
+rel="noreferrer"
+className="github-btn"
+>
+
+GitHub
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+))}
+</div>
+
+{/* ===========================
+    GITHUB CTA
+=========================== */}
+
+<div className="github-cta">
+
+  <h3>
+    Want to see more projects?
+  </h3>
+
+  <p>
+    Explore my GitHub profile for additional Full Stack, AI,
+    React and JavaScript projects that showcase my learning
+    journey and development experience.
+  </p>
+
+  <a
+    href="https://github.com/thanmai2903"
+    target="_blank"
+    rel="noreferrer"
+    className="github-profile-btn"
+  >
+    View GitHub Profile →
+  </a>
+
+</div>
+
+</div>
+
+</section>
+
+);
+
 }
 
 export default Projects;

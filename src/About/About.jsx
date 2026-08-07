@@ -1,9 +1,8 @@
-import React from "react";
 import "./About.css";
 
 function About() {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-container">
 
         {/* TITLE */}
@@ -11,66 +10,131 @@ function About() {
 
         <div className="about-grid">
 
-          {/* LEFT SIDE */}
+          {/* LEFT */}
+
           <div className="about-left">
 
             <div className="about-box">
+
               <p>
-                I am a passionate <span>Web Developer</span> focused on building 
-                modern, responsive, and user-friendly web applications.
+                Hi! I'm <span>Lakshmi Thanmai Palla</span>, a passionate
+                <span> Full Stack Developer</span> and
+                <span> AI Enthusiast</span> currently pursuing my
+                <strong> B.Tech in Computer Science & Engineering</strong>.
               </p>
 
               <p>
-                I enjoy working on <span>real-world projects</span> that solve 
-                practical problems and improve user experience.
+                I enjoy building modern, responsive and scalable web
+                applications using
+                <span> React</span>,
+                <span> Next.js</span>,
+                <span> JavaScript</span> and
+                <span> Node.js</span>.
               </p>
 
               <p>
-                I completed an <span>AI Internship</span> at Infosys Springboard, 
-                where I designed an <strong>autonomous learning agent </strong> 
-                using <strong>checkpoint verification</strong> and 
-                <strong> Feynman pedagogy</strong>.
+                During my
+                <span> AI Internship at Infosys Springboard</span>,
+                I developed an
+                <strong> Autonomous Learning Agent </strong>
+                using
+                <strong> LangGraph</strong>,
+                <strong> Google Gemini</strong> and
+                <strong> Tavily APIs</strong>.
               </p>
 
               <p>
-                This experience improved my problem-solving, logical thinking, 
-                and communication skills.
+                I love solving real-world problems, continuously learning new
+                technologies and building impactful software that improves
+                people's lives.
               </p>
 
-              <p>
-                My goal is to create impactful digital products combining 
-                creativity and technical skills.
-              </p>
             </div>
 
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT */}
+
           <div className="about-right">
 
             <div className="card">
-              <h3>💻 Development</h3>
-              <p>React, JavaScript, HTML, CSS, Tailwind</p>
+              <h3>💻 Tech Stack</h3>
+
+              <ul>
+                <li>React.js</li>
+                <li>Next.js</li>
+                <li>JavaScript</li>
+                <li>Node.js</li>
+              </ul>
+
             </div>
 
             <div className="card">
-              <h3>🎨 UI/UX</h3>
-              <p>Responsive design, clean UI, accessibility</p>
+              <h3>🤖 AI</h3>
+
+              <ul>
+                <li>LangGraph</li>
+                <li>Google Gemini</li>
+                <li>Tavily API</li>
+                <li>Prompt Engineering</li>
+              </ul>
+
             </div>
 
             <div className="card">
-              <h3>⚡ Projects</h3>
-              <p>Real-world applications with performance focus</p>
+              <h3>🎯 Strengths</h3>
+
+              <ul>
+                <li>Problem Solving</li>
+                <li>Clean UI Design</li>
+                <li>Teamwork</li>
+                <li>Fast Learner</li>
+              </ul>
+
             </div>
 
             <div className="card highlight">
-              <h3>🏆 Internship</h3>
-              <p>Infosys AI Internship – Autonomous Learning Agent</p>
+              <h3>🚀 Current Focus</h3>
+
+              <ul>
+                <li>Full Stack Development</li>
+                <li>Artificial Intelligence</li>
+                <li>DSA</li>
+                <li>Software Engineering</li>
+              </ul>
+
             </div>
 
           </div>
 
         </div>
+
+        {/* QUICK HIGHLIGHTS */}
+
+        <div className="about-highlights">
+
+          <div className="highlight-box">
+            <h3>1+</h3>
+            <p>Internship</p>
+          </div>
+
+          <div className="highlight-box">
+            <h3>50+</h3>
+            <p>Projects</p>
+          </div>
+
+          <div className="highlight-box">
+            <h3>20+</h3>
+            <p>Certificates</p>
+          </div>
+
+          <div className="highlight-box">
+            <h3>8.86</h3>
+            <p>CGPA</p>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );
