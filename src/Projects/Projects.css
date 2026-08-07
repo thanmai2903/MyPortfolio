@@ -110,44 +110,34 @@ body.dark .other-title{
    FEATURED PROJECTS
 ========================================== */
 
-.project-card:nth-child(even){
-
-grid-template-columns:1.1fr 1fr;
-
-}
-
-.project-card:nth-child(even) .project-image{
-
-order:2;
-
-}
-
-.project-card:nth-child(even) .project-content{
-
-order:1;
-
-}
 
 .featured-projects{
     display:flex;
     flex-direction:column;
     gap:45px;
 }
-
 .project-card{
-    display:grid;
-    grid-template-columns:1fr 1.1fr;
-    gap:40px;
-    align-items:center;
-    padding:40px;
-    background:white;
-    border-radius:22px;
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-    transition:.35s;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 40px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
 }
 
 body.dark .project-card{
     background:#1e293b;
+}
+
+.project-image{
+    order:1;
+    width:100%;
+}
+
+.project-content{
+    order:2;
+    width:100%;
 }
 
 .project-card:hover{

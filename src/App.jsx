@@ -11,21 +11,23 @@ import Education from "./Education/Education";
 import Footer from "./Footer/Footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Certifications from "./Certifications/Certifications";
+import { FaBars, FaTimes } from "react-icons/fa";
 /* 🔥 HEADER */
 function Header({ dark, toggleDarkMode }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
 
-      {/* LOGO */}
       <div className="logo">
         Thanmai's Portfolio
       </div>
 
-      {/* NAV LINKS */}
+      {/* Desktop Menu */}
       <div className="nav-links">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-          <Link to="/education">Education</Link>
+        <Link to="/education">Education</Link>
         <Link to="/experience">Experience</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/skills">Skills</Link>
@@ -33,10 +35,55 @@ function Header({ dark, toggleDarkMode }) {
         <Link to="/contact">Contact</Link>
       </div>
 
-      {/* DARK MODE BUTTON */}
-      <button className="dark-btn" onClick={toggleDarkMode}>
-        {dark ? "☀️" : "🌙"}
-      </button>
+      {/* Right Side */}
+      <div className="right-icons">
+
+        <button
+          className="dark-btn"
+          onClick={toggleDarkMode}
+        >
+          {dark ? "☀️" : "🌙"}
+        </button>
+
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(true)}
+        >
+          <FaBars />
+        </button>
+
+      </div>
+
+      {/* Overlay */}
+      <div
+        className={`overlay ${menuOpen ? "show" : ""}`}
+        onClick={() => setMenuOpen(false)}
+      ></div>
+
+      {/* Sidebar */}
+      <div className={`sidebar ${menuOpen ? "open" : ""}`}>
+
+        <div className="sidebar-top">
+
+          <h2>Menu</h2>
+
+          <FaTimes
+            className="close-icon"
+            onClick={() => setMenuOpen(false)}
+          />
+
+        </div>
+
+        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+        <Link to="/education" onClick={() => setMenuOpen(false)}>Education</Link>
+        <Link to="/experience" onClick={() => setMenuOpen(false)}>Experience</Link>
+        <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
+        <Link to="/skills" onClick={() => setMenuOpen(false)}>Skills</Link>
+        <Link to="/certifications" onClick={() => setMenuOpen(false)}>Certifications</Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+
+      </div>
 
     </nav>
   );

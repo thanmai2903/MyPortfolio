@@ -3,7 +3,7 @@
 ===================================================== */
 
 .certifications{
-    padding:100px 20px;
+    padding: 0px 20px 100px;
     background:#f8fafc;
     transition:.35s;
 }
@@ -24,7 +24,7 @@ body.dark .certifications{
 .section-title{
 
     text-align:center;
-    font-size:42px;
+    font-size:45px;
     font-weight:800;
     color:#111827;
     margin-bottom:15px;

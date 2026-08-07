@@ -389,72 +389,7 @@ const renderSkills = (title, skills) => (
           toolSkills
         )}
 
-                {/* ==========================
-            ACHIEVEMENTS
-        ========================== */}
-
-        <div className="stats-section">
-
-          <h2 className="section-title">
-            Achievements
-          </h2>
-
-          <div className="stats-grid">
-
-            {stats.map((item, index) => (
-
-              <div
-                className="stat-card"
-                key={index}
-              >
-
-                <h3>
-                  {item.number}
-                </h3>
-
-                <p>
-                  {item.title}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-        {/* ==========================
-            CURRENTLY LEARNING
-        ========================== */}
-
-        <div className="learning-section">
-
-          <h2 className="section-title">
-            Currently Learning
-          </h2>
-
-          <p className="learning-subtitle">
-            Continuously improving my skills by learning
-            modern technologies and cloud platforms.
-          </p>
-
-          <div className="learning-tags">
-
-            {learning.map((item, index) => (
-
-              <span
-                key={index}
-              >
-                {item}
-              </span>
-
-            ))}
-
-          </div>
-
-        </div>
-
+                
       </div>
 
     </section>

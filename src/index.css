@@ -11,6 +11,93 @@ body {
   transition: background .35s ease, color .35s ease;
 }
 
+
+.right-icons{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.menu-btn{
+    display:none;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#7c3aed;
+    color:white;
+    font-size:22px;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-320px;
+    width:280px;
+    height:100vh;
+    background:white;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    transition:.35s;
+    z-index:2000;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+body.dark .sidebar{
+    background:#111827;
+}
+
+.sidebar.open{
+    left:0;
+}
+
+.sidebar-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.close-icon{
+    font-size:28px;
+    cursor:pointer;
+}
+
+.sidebar a{
+    text-decoration:none;
+    color:#374151;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+body.dark .sidebar a{
+    color:white;
+}
+
+.sidebar a:hover{
+    color:#7c3aed;
+    padding-left:10px;
+}
+
+
 /* =====================================================
    DARK MODE
 ===================================================== */
@@ -240,6 +327,12 @@ body.dark .nav-links a{
     padding:16px 5%;
 
   }
+
+  .menu-btn{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
 
   .nav-links{
 
